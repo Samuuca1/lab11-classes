@@ -59,3 +59,13 @@ console.log("Before Discount:");
 console.log(milk.toString());
 console.log(chicken.toString());
 console.log(watermelon.toString());
+
+//After adding the discount, with and array of products
+
+ProductProperties.applyDiscount([milk, chicken, watermelon], 0.1);
+
+// After discount
+console.log("\nAfter 10% Discount:");
+console.log(milk.toString());
+console.log(chicken.toString());
+console.log(watermelon.toString());
