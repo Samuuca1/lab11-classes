@@ -22,7 +22,11 @@ class ProductProperties {
 
 class PerishableProductProperties extends ProductProperties {
     constructor(name, price, quantity, expirationDate) {
-        super(name, price, quantity); // calling parent const
+        super(name, price, quantity); // calling parent constructor
         this.expirationDate = expirationDate;
+    }
+
+    toString() {
+        return `${super.toString()}, Expiration Date: ${this.expirationDate}`;
     }
 }
