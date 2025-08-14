@@ -55,4 +55,12 @@ class StoreProperties {
     constructor() {
         this.inventory = [];
     }
+    
+    addProduct(product) {
+        if (product instanceof ProductProperties) {
+            this.inventory.push(product);
+        } else {
+            throw new Error("That is not a product.");
+        }
+    }
 }
