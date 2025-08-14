@@ -49,23 +49,10 @@ class PerishableProductProperties extends ProductProperties {
     }
 }
 
-//TEsting code
 
-const milk = new PerishableProductProperties("Milk", 1.50, 10, "2024-10-11");
-const chicken = new PerishableProductProperties("Chicken", 7.20, 15, "2025-05-17");
-const watermelon = new ProductProperties("Watermelon", 5, 20);
-
-console.log("Before Discount:");
-console.log(milk.toString());
-console.log(chicken.toString());
-console.log(watermelon.toString());
-
-//After adding the discount, with and array of products
-
-ProductProperties.applyDiscount([milk, chicken, watermelon], 0.1);
-
-// After discount
-console.log("\nAfter 10% Discount:");
-console.log(milk.toString());
-console.log(chicken.toString());
-console.log(watermelon.toString());
+//Create a Store Class
+class StoreProperties {
+    constructor() {
+        this.inventory = [];
+    }
+}
