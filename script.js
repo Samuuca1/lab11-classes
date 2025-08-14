@@ -63,4 +63,8 @@ class StoreProperties {
             throw new Error("That is not a product.");
         }
     }
+    
+    getInventoryValue() {
+        return this.inventory.reduce((total, product) => total + product.getTotalValue(), 0);
+    }
 }
