@@ -16,7 +16,14 @@ class ProductProperties {
     toString() {
         return `Product: ${this.name}, Price: CAD${this.price.toFixed(2)}, Quantity: ${this.quantity}`;
     }
+
+    static applyDiscount(products, discount) {
+        if (!Array.isArray(products) || typeof discount !== "number" || discount < 0 || discount > 1) {
+            throw new Error("Invalid input for applyDiscount.");
+        }
+    }
 }
+
 
 //Creating a sub class and its expansion constructor
 
@@ -31,14 +38,3 @@ class PerishableProductProperties extends ProductProperties {
     }
 }
 
-//Test code
-
-const milk = new PerishableProductProperties("Milk", 1.50, 10, "2024-10-11");
-const chicken = new PerishableProductProperties("Chicken", 7.20, 15, "2025-05-17");
-
-
-console.log(milk.toString()); 
-console.log("Total Value: $" + milk.getTotalValue().toFixed(2));
-
-console.log(chicken.toString());
-console.log("Total Value: $" + chicken.getTotalValue().toFixed(2));
