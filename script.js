@@ -20,6 +20,6 @@ class ProductProperties {
 
 //Test code
 
-const apple = new ProductProperties("Apple", 2.5, 50);
-console.log(apple.toString()); 
-console.log("Valor Total:", maca.getTotalValue()); 
+const watermelon = new ProductProperties("Watermelon", 5, 20);
+console.log(watermelon.toString()); 
+console.log("Valor Total:", watermelon.getTotalValue()); 
