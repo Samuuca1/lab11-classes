@@ -81,13 +81,33 @@ const store = new StoreProperties();
 const milk = new PerishableProductProperties("Milk", 1.50, 10, "2024-10-11");
 const chicken = new PerishableProductProperties("Chicken", 7.20, 15, "2025-05-17");
 const watermelon = new ProductProperties("Watermelon", 5, 20);
+const bread = new ProductProperties("Bread", 1.80, 20);
+const juice = new ProductProperties("Juice", 3.00, 15);
 
 store.addProduct(milk);
 store.addProduct(chicken);
 store.addProduct(watermelon);
+store.addProduct(bread);
+store.addProduct(juice);
 
+
+// Print total inventory value before discount
+console.log("=== Before Discount ===");
 console.log("Total Inventory Value: $" + store.getInventoryValue().toFixed(2));
 
-const searchResult = store.findProductByName("chicken");
-console.log(searchResult ? searchResult.toString() : "Product not found");
+// Print total inventory value after discount
+ProductProperties.applyDiscount(store.inventory, 0.15);
 
+console.log("\n=== After 15% Discount ===");
+console.log("Total Inventory Value: $" + store.getInventoryValue().toFixed(2));
+
+// Find and print a specific product
+console.log("\n=== Search Result ===");
+const searchName = "Chicken";
+const foundProduct = store.findProductByName(searchName);
+console.log(foundProduct ? foundProduct.toString() : `${searchName} not found.`);
+
+console.log("\n=== Search Result ===");
+const searchName2 = "Cheese";
+const foundProduct2 = store.findProductByName(searchName2);
+console.log(foundProduct2 ? foundProduct2.toString() : `${searchName2} not found.`);
