@@ -18,8 +18,11 @@ class ProductProperties {
     }
 }
 
-//Test code
+//Creating a sub class and its expansion constructor
 
-const watermelon = new ProductProperties("Watermelon", 5, 20);
-console.log(watermelon.toString()); 
-console.log("Valor Total:", watermelon.getTotalValue()); 
+class PerishableProductProperties extends ProductProperties {
+    constructor(name, price, quantity, expirationDate) {
+        super(name, price, quantity); // calling parent const
+        this.expirationDate = expirationDate;
+    }
+}
