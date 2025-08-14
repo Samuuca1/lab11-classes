@@ -36,16 +36,26 @@ class ProductProperties {
 
 
 
-        //Creating a sub class and its expansion constructor
+//Creating a sub class and its expansion constructor
 
-        class PerishableProductProperties extends ProductProperties {
-            constructor(name, price, quantity, expirationDate) {
-                super(name, price, quantity); // calling parent constructor
-                this.expirationDate = expirationDate;
-            }
+class PerishableProductProperties extends ProductProperties {
+    constructor(name, price, quantity, expirationDate) {
+        super(name, price, quantity); // calling parent constructor
+        this.expirationDate = expirationDate;
+    }
 
-            toString() {
-                return `${super.toString()}, Expiration Date: ${this.expirationDate}`;
-            }
-        }
+    toString() {
+        return `${super.toString()}, Expiration Date: ${this.expirationDate}`;
+    }
+}
 
+//TEsting code
+
+const milk = new PerishableProductProperties("Milk", 1.50, 10, "2024-10-11");
+const chicken = new PerishableProductProperties("Chicken", 7.20, 15, "2025-05-17");
+const watermelon = new ProductProperties("Watermelon", 5, 20);
+
+console.log("Before Discount:");
+console.log(milk.toString());
+console.log(chicken.toString());
+console.log(watermelon.toString());
