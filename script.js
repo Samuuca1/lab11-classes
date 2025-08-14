@@ -72,3 +72,22 @@ class StoreProperties {
         return this.inventory.find(product => product.name.toLowerCase() === name.toLowerCase()) || null;
     }
 }
+
+
+//Testing Code
+
+const store = new StoreProperties();
+
+const milk = new PerishableProductProperties("Milk", 1.50, 10, "2024-10-11");
+const chicken = new PerishableProductProperties("Chicken", 7.20, 15, "2025-05-17");
+const watermelon = new ProductProperties("Watermelon", 5, 20);
+
+store.addProduct(milk);
+store.addProduct(chicken);
+store.addProduct(watermelon);
+
+console.log("Total Inventory Value: $" + store.getInventoryValue().toFixed(2));
+
+const searchResult = store.findProductByName("chicken");
+console.log(searchResult ? searchResult.toString() : "Product not found");
+
